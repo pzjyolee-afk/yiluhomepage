@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YILU HK LIMITED - エネルギーストレージシステムとヒーター</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#home" ><img src="img/logo_top.png" alt="logo_top" ></a>
+                    
+                </div>
+                 <!-- 下拉式语言切换器 -->
+                <div class="lang-dropdown" id="langDropdown">
+                    <!-- 下拉触发按钮 -->
+                    <button class="dropdown-btn active" id="dropdownTrigger">
+                        <span id="currentLangText">日本語</span>
+                        <span>▼</span>
+                    </button>
+                    <!-- 下拉选项列表 -->
+                    <ul class="dropdown-content" id="langOptions">
+                        <li data-lang="ko-KR" >한국어</li>
+                        <li data-lang="en-US">English</li>
+                        <li data-lang="ja-JP" class="active">日本語</li>
+                    </ul>
+                </div>
+
+                <nav class="nav">
+                    <a href="#home" class="nav-link" data-lang-key="btn_home">ソリューション</a>
+                    <a href="#battery-section" class="nav-link" data-lang-key="btn_product">製品情報</a>
+                    <a href="#battery-section2" class="nav-link" data-lang-key="btn_company">会社概要</a>
+                    <a href="#dealer-iot-section" class="nav-link" data-lang-key="btn_contact">お問い合わせ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Q.LINK Hero Section -->
+    <!-- <section id="home" class="battery-sectio3">
+        <div class="container">
+            <div class="battery-detailstop">
+              <div class="detail-cardtop" >
+                    <div style="max-width: 590px;margin: 0 auto; text-align: left; padding: 20px;">
+                        <img src="img/qlink.png" alt="qlink" style=" display: flex; width: 183px; height: 62px; border-radius: 8px;margin-bottom: 20px;margin-top: 50px;text-align: center;align-items: center;justify-content: center;" >
+                        <h1 style="font-size: 2.5em;font-weight: bold;color: #788ce3;margin: 0px 0;letter-spacing: 1px;">スマート管理</h1>
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-bottom: 20px;">
+                        <span style="font-size: 1.5em;font-weight: bold;color: #000;">スマホアプリで各種デバイスを効率的に管理し、異常時には即座にメッセージでお知らせします。</span>
+                        </div>
+                        <h1 style="font-size: 2.5em;font-weight: bold;color: #788ce3;margin: 0px 0;letter-spacing: 1px;">サポート対応</h1>
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-bottom: 0pxpx;">
+                        <span style="font-size: 1.5em;font-weight: bold;color: #000;">過去2ヶ月間以内の稼働履歴を確認し、現地訪問を行わずに、遠隔制御などの初期対応ができます！</span>
+                        </div>
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-top: 20px;margin-bottom: 70px;">
+                            <span style="background-color: #e63946;color: white;padding: 5px 15px;border-radius: 5px;font-size: 0.9em;font-weight: bold;">OEM生産のご依頼も承っております。</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-cardtop">
+                    <div ><img src="img/top-visual.png" style="max-width: 100%; height: auto;"></div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+     <!-- Lithium Iron Phosphate Battery Section -->
+    <section id="home">
+        <div class="container">
+            <div class="battery-details">
+                <div class="detail-cardtop" >
+                    <div style="max-width: 590px;margin: 0 auto; text-align: left; padding: 20px;">
+                        <img src="img/qlink.png" alt="qlink" style=" display: flex; width: 183px; height: 62px; border-radius: 8px;margin-bottom: 20px;margin-top: 50px;text-align: center;align-items: center;justify-content: center;" >
+                        <h1 style="color: #788ce3;" data-lang-key="title">スマート管理</h1>
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-bottom: 20px;" >
+                        <span data-lang-key="description">スマホアプリで各種デバイスを効率的に管理し、異常時には即座にメッセージでお知らせします。</span>
+                        </div>
+                        <h1 style="color: #788ce3;" data-lang-key="title2">サポート対応</h1>
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-bottom: 0pxpx;" >
+                        <span data-lang-key="description2">過去2ヶ月間以内の稼働履歴を確認し、現地訪問を行わずに、遠隔制御などの初期対応ができます！</span>
+                        </div>
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-top: 20px;margin-bottom: 70px;">
+                            <span style="background-color: #e63946;color: white;padding: 5px 15px;border-radius: 5px;font-size: 0.9em;font-weight: bold;" data-lang-key="bannerpoint">カスタマイズ開発も承っております。</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-cardtop">
+                    <div ><img src="img/top-visual.png" data-lang-img-key="bannerImg" style="max-width: 100%; height: auto;"></div>
+                </div>
+            </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ESS Solution Section -->
+    <section id="products" class="ess-solution-section">
+        <div class="container">
+            <div class="section-header">
+                <div style="max-width: 590px;margin: 0 auto;padding: 20px;">
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-bottom: 0px;">
+                        <span style="font-size: 1.5em;font-weight: bold;color: #000;"data-lang-key="titlezizhi">自社特製</span>
+                        
+                        </div>
+                        <h1 data-lang-key="titleone">ESSソリューション</h1>
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-bottom: 0px;">
+                            <span style="background-color: #e63946;color: white;padding: 5px 15px;border-radius: 5px;font-size: 0.9em;font-weight: bold;"data-lang-key="bannerpoint">カスタマイズ開発も承っております。</span>
+                        </div>
+                </div>
+            </div>
+            <div class="ess-cards">
+                <div class="ess-card">
+                    <div class="ess-card-image battery-balance">
+                        <img src="img/battery.png" alt="Battery Balance" >
+                    </div>
+                    <h3 data-lang-key="batteryh1">バッテリーバランス</h3>
+                    <h4 data-lang-key="batteryh2">自動調整機能搭載</h4>
+                    <p data-lang-key="batteryh3">セルバランスが崩れると充電を開始し、整うと停止します。</p>
+                </div>
+                <div class="ess-card">
+                    <div class="ess-card-image rv-camping"><img src="img/car.png" alt="rv-camping" ></div>
+                    <h4 data-lang-key="carh1">真冬でも安心！</h4>
+                    <h3 data-lang-key="carh2">厳寒期の安全装置搭載</h3>
+                    <p data-lang-key="carh3">厳しい寒さの中でも充電量と放電量を自動で調整し、マイナス10度でも無理なく、安心してお使いいただけます！</p>
+                </div>
+                <div class="ess-card">
+                    <div class="ess-card-image ess-container"><img src="img/house.png" alt="v" ></div>
+                    <h3>ESS</h3>
+                    <h4>[Energy Storage System]</h4>
+                    <h3 data-lang-key="essh1">ESS安全認証取得済</h3>
+                    <h4 data-lang-key="essh2">信頼できるバッテリーシステム</h4>
+                </div>
+                <div class="ess-card">
+                    <div class="ess-card-image bms-board"><img src="img/board.png" alt="bms-board" ></div>
+                    <h4 data-lang-key="boardh1">安心・安全のための</h4>
+                    <h3>BMS</h3>
+                    <h4 data-lang-key="boardh2">BMSからソフトウェアまで自社開発</h4>
+                    <h3 data-lang-key="titlekc">KC62619 認証 IOT BMS</h3>
+                </div>
+            </div>
+            <div class="ess-description">
+                <p data-lang-key="Textkc1">厳しい検査基準をクリアし、各種安全認証を取得しています。キャンピングカーはもちろん、家庭用蓄電、工場設備、
+                    太陽光システムとの連携など、幅広いエネルギー貯蔵用途に対応し、多様な環境で高いパフォーマンスを発揮します。</p>
+                <br>
+                <p data-lang-key="Textkc2">AI技術の導入により、バッテリーバランスのアクティブ調整や低温環境での放電調整など、これまで以上に高度でスピ
+                    ーディーな自動処理機能を実現しています。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lithium Iron Phosphate Battery Section -->
+    <section id="battery-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-banner">
+                    <div style="max-width: 716px;margin: 0 auto;padding: 20px;">
+                        <div style="display: flex;justify-content: space-between;align-items: center; margin-bottom: 0px;">
+                        <span style="font-size: 1.5em;font-weight: bold;color: #000;text-indent:1.2em;"data-lang-key="titlezizhi">自社特製</span>
+                       
+                        </div>
+                        <h1 data-lang-key="titletwo">リン酸鉄リチウムバッテリー</h1>
+                         <span style="background-color: #e63946;color: white;padding: 5px 15px;border-radius: 5px;font-size: 0.9em;font-weight: bold;"data-lang-key="Textoem">OEM生産のご依頼も承っております。</span>
+                        <div style="font-size: 1.8em;font-weight: normal;color: #333;margin: 0px 0;text-transform: uppercase;letter-spacing: 2px;margin-top: 20px;">
+                            <div class="total-shipments">
+                                <span class="label" data-lang-key="textchukou">出荷台数実績（韓国）</span>
+                                <span class="number">20,000+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="battery-products">
+                <div class="battery-card">
+                    <div class="battery-image portable-grey"><img src="img/battery_1.png"></div>
+                    <h3 data-lang-key="Powertext1">ポータブル電源</h3>
+                    <ul>
+                        <li >22.4V</li>
+                        <li>1680Wh</li>
+                        <li data-lang-key="Powertext2">KC62619安全認証</li>
+                        <li>250 x 350 x 300 mm</li>
+                    </ul>
+                </div>
+                <div class="battery-card">
+                    <div class="battery-image portable-black"><img src="img/battery_2.png"></div>
+                    <h3 data-lang-key="Powertext1">ポータブル電源</h3>
+                    <ul>
+                        <li>12V</li>
+                        <li>105Ah/120Ah</li>
+                        <li data-lang-key="Powertext2">KC62619安全認証</li>
+                        <li>130 x 420 x 330 mm</li>
+                    </ul>
+                </div>
+                <div class="battery-card">
+                    <div class="battery-image battery-pack"><img src="img/battery_3.png"></div>
+                    <h3 data-lang-key="Power2text1">バッテリーパック</h3>
+                    <ul>
+                        <li>12V</li>
+                        <li>300Ah</li>
+                        <li data-lang-key="Powertext2">KC62619安全認証</li>
+                        <li>443 x 156 x 250 mm</li>
+                    </ul>
+                </div>
+                <div class="battery-card">
+                    <div class="battery-image battery-large-1"><img src="img/battery_4.png"></div>
+                    <h3 data-lang-key="Power3text1">大型バッテリー</h3>
+                    <ul>
+                        <li>12V/24V</li>
+                        <li>1200Ah/600Ah</li>
+                        <li>KC62619安全認証</li>
+                        <li>365 x 670 x 250 mm</li>
+                    </ul>
+                </div>
+                <div class="battery-card">
+                    <div class="battery-image battery-large-2"><img src="img/battery_5.png"></div>
+                    <h3 data-lang-key="Power3text1">大型バッテリー</h3>
+                    <ul>
+                        <li>12V/24V</li>
+                        <li>600Ah/300Ah</li>
+                        <li>KC62619安全認証</li>
+                        <li>360 x 360 x 250 mm</li>
+                    </ul>
+                </div>
+                <div class="battery-card">
+                    <div class="battery-image charger"><img src="img/battery_6.png"></div>
+                    <h3 data-lang-key="Power4text1">充電器</h3>
+                    <ul>
+                        <li>12V</li>
+                        <li>150Ah</li>
+                        <li>KC62619安全認証</li>
+                        <li>450 x 150 x 215 mm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="battery-description">
+                <p data-lang-key="Powermiaoshu">製品の安全性と耐久性を確保するため、当社のリン酸鉄リチウムバッテリー製品には、世界トップレベルの品質を誇るEVE社のセルを厳選して採用しています。</p>
+            </div>
+            <div class="battery-details">
+               <div class="detail-card">
+                    <div class="detail-image cylindrical-cell"><img src="img/eve.jpg" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Powertitle1">EVE社製 C33円筒形セル</h3>
+                    <p data-lang-key="Powershuoming1">C33円筒形セルの最大放電率は「3C」すなわちバッテリー容量の3倍！</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-image cylindrical-cell"><img src="img/charge.jpg" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Powertitle2">超高速充電対応セル構造</h3>
+                    <p data-lang-key="Powershuoming2">C33円筒形セルは最大1Cの連続充電に対応。 40A急速充電器を使用すれば、わずか3時間でフル充電を実現。</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Application Scenarios Section -->
+    <section class="applications-section">
+        <div class="container">
+            <div class="applications-intro">
+                <p data-lang-key="cangjingtext">アウトドア用途から業務現場、非常用バックアップまで、幅広い環境で安定した電力供給を実現します。</p>
+            </div>
+            <div class="application-cards">
+                <div class="app-card">
+                    <div class="app-image camping"><img src="img/camping.jpg" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Changjing1">車中泊</h3>
+                </div>
+                <div class="app-card">
+                    <div class="app-image drone"><img src="img/drone.jpg" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Changjing2">ドローン</h3>
+                </div>
+                <div class="app-card">
+                    <div class="app-image fishing"><img src="img/fishing.jpg" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Changjing3">釣り</h3>
+                </div>
+                <div class="app-card">
+                    <div class="app-image home"><img src="img/familyled.jpg" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Changjing4">非常用電力</h3>
+                </div>
+                <div class="app-card">
+                    <div class="app-image music"><img src="img/music.jpg" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Changjing5">バスキング</h3>
+                </div>
+                <div class="app-card">
+                    <div class="app-image photography"><img src="img/photo.jpg" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Changjing6">野外撮影</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FF Heater Section -->
+    <section class="heater-section">
+        <div class="container">
+            <div class="section-header">
+                
+                <div class="section-banner">
+                    <div style="max-width: 500px;margin: 0 auto;padding: 20px;">
+                        <div style="display: flex;justify-content:start;align-items: center; margin-bottom: 0px;">
+                        <span style="font-size: 1.5em;font-weight: bold;color: #000;text-indent:4.7em;"data-lang-key="titlezizhi">自社特製</span>
+                        </div>
+                        <h1 data-lang-key="titlethree">FFヒーター</h1>
+                        <span style="background-color: #e63946;color: white;padding: 5px 15px;border-radius: 5px;font-size: 0.9em;font-weight: bold;"data-lang-key="Textoem">OEM生産のご依頼も承っております。</span>
+                        <div style="font-size: 1.8em;font-weight: normal;color: #333;margin: 0px 0; margin-top: 20px; text-transform: uppercase;letter-spacing: 2px;">
+                            <div class="total-shipments">
+                                <span class="label" data-lang-key="textchukou">出荷台数実績（韓国）</span>
+                                <span class="number">100,000+</span>
+                            </div>
+                        </div>
+                    </div></div>
+            </div>
+            <div class="heater-content">
+                <div class="heater-products">
+                    <div class="heater-card">
+                        <div class="heater-image heater-black-2kw"><img src="img/one2k.png" style="max-width: 100%; height: auto;"></div>
+                        <h3 data-lang-key="Heatertext1">一体型FFヒーター　2KW</h3>
+                        <ul>
+                            <li>12V</li>
+                            <li data-lang-key="Heatertext2">軽油/灯油</li>
+                            <li>12Kg</li>
+                            <li>240 x 380 x 270 mm</li>
+                        </ul>
+                    </div>
+                    <div class="heater-card">
+                        <div class="heater-image heater-black-5kw"><img src="img/one5k.png" style="max-width: 100%; height: auto;"></div>
+                        <h3 data-lang-key="Heater2text1">一体型FFヒーター　5KW</h3>
+                        <ul>
+                            <li>12V</li>
+                            <li data-lang-key="Heatertext2">軽油/灯油</li>
+                            <li>12Kg</li>
+                            <li>200 x 400 x 300 mm</li>
+                        </ul>
+                    </div>
+                    <div class="heater-card">
+                        <div class="heater-image heater-white-2kw"><img src="img/car2k.png" style="max-width: 100%; height: auto;"></div>
+                        <h3 data-lang-key="Heater3text1">車載用FFヒーター　2KW</h3>
+                        <ul>
+                            <li>12V</li>
+                            <li data-lang-key="Heatertext2">軽油/灯油</li>
+                            <li>4.3Kg</li>
+                            <li>350 x 110 x 110 mm</li>
+                        </ul>
+                    </div>
+                    <div class="heater-card">
+                        <div class="heater-image heater-white-5kw"><img src="img/car5k.png" style="max-width: 100%; height: auto;"></div>
+                        <h3 data-lang-key="Heater4text1">車載用FFヒーター　5KW</h3>
+                        <ul>
+                            <li>12V</li>
+                            <li data-lang-key="Heatertext2">軽油/灯油</li>
+                            <li>4.3Kg</li>
+                            <li>400 x 140 x 140 mm</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="certifications">
+                    <h3 data-lang-key="Titlekc2">KC安全認証取得済み</h3>
+                    <div class="cert-grid">
+                        <div class="cert-doc"><img src="img/kc.png" style="max-width: 100%; height: auto;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heater Components Section -->
+    <section class="components-section">
+        <div class="container">
+            <div class="components-intro">
+                <p  data-lang-key="Pointtext1">長年にわたって築き上げたサプライヤーネットワークを基盤に、常に最適な高品質パーツを厳選し、製品の品質向上と優れたコストパフォーマンスを実現しています。</p>
+            </div>
+            <div class="component-cards">
+                <div class="component-card"> <img src="img/fire.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/fire2.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/bldc.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/pcb.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>    
+            </div>
+            <div class="components-description">
+                <p data-lang-key="Pointtext2">自社が独自に設計・開発したパーツを搭載することで、耐久性や信頼性など、製品品質の大幅な強化を実現しております。</p>
+            </div>
+             <div class="component-cards">
+                <div class="component-card"> <img src="img/control.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/0sound.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/heater.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/burn.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Other Products Section -->
+    <section class="other-products-section">
+        <div class="container">
+            <div class="section-header">
+                
+                <div class="section-banner">
+                    <div style="max-width: 500px;margin: 0 auto;padding: 20px;">
+                        <div style="display: flex;justify-content: center;align-items: center; margin-bottom: 0px;">
+                        <span style="background-color: #e63946;color: white;padding: 5px 15px;border-radius: 5px;font-size: 0.9em;font-weight: bold;" data-lang-key="Textoem">OEM生産のご依頼も承っております。</span>
+                        </div>
+                        <h1 data-lang-key="titlefour">その他製品</h1>
+                       
+                    </div></div>
+            </div>
+            <div class="other-products-grid">
+                <div class="other-product-card">
+                    <div class="other-product-image power-supply"><img src="img/zouxing.png" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Othertext1">走行充電器</h3>
+                    <ul>
+                        <li data-lang-key="Othertext2">最大電流　50A</li>
+                        <li>12V/24V</li>
+                        <li data-lang-key="Othertext3">双方向充電対応</li>
+                    </ul>
+                </div>
+                <div class="other-product-card">
+                    <div class="other-product-image inverter"><img src="img/zouxing2.png" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Other2text1">インバーター</h3>
+                    <ul>
+                        <li>12V/24V</li>
+                        <li>2000W/3000W</li>
+                        <li data-lang-key="Other2text2">純正弦波</li>
+                    </ul>
+                </div>
+                <div class="other-product-card">
+                    <div class="other-product-image air-conditioner"><img src="img/aircon.png" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Other3text1">車載エアコン</h3>
+                    <ul>
+                        <li>DC 12V/24V</li>
+                        <li>400~800W</li>
+                        <li>170 x 530 x 260 mm</li>
+                    </ul>
+                </div>
+                <div class="other-product-card">
+                    <div class="other-product-image fan"><img src="img/fan.png" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Other4text1">無動力ファン</h3>
+                    <ul>
+                        <li data-lang-key="Other4text2">アルミニウム製ケース</li>
+                        <li>8.7Kg</li>
+                        <li>350 x 350 x 230 mm</li>
+                    </ul>
+                </div>
+                <div class="other-product-card">
+                    <div class="other-product-image radar"><img src="img/zouxing3.png" style="max-width: 100%; height: auto;"></div>
+                    <h3 data-lang-key="Other5text1">ソーラーパネル</h3>
+                    <ul>
+                        <li>200W</li>
+                        <li>7.14Kg</li>
+                        <li>2221 x 606 mm</li>
+                    </ul>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- About Us Section -->
+     <!-- <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">ABOUT US</h2>
+            <div class="about-content">
+                <p>YILU HK LTDは、リン酸鉄リチウムバッテリー、FFヒーター、IoT-ESSソリューションを専門とする企業です。高品質な製品と優れたサービスを提供し、お客様の様々なニーズに対応しています。</p>
+                <p>当社は、グローバルな視点を持ち、世界中のお客様に製品を提供しています。安全性、信頼性、革新性を重視し、持続可能なエネルギーソリューションを追求しています。</p>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Company History Section -->
+     <!-- <section class="history-section">
+        <div class="container2">
+            <h2 class="section-title">ABOUT US</h2>
+            <div class="about-content">
+                <p>YILU HK LTDは、リン酸鉄リチウムバッテリー、FFヒーター、IoT-ESSソリューションを専門とする企業です。高品質な製品と優れたサービスを提供し、お客様の様々なニーズに対応しています。</p>
+                <p>当社は、グローバルな視点を持ち、世界中のお客様に製品を提供しています。安全性、信頼性、革新性を重視し、持続可能なエネルギーソリューションを追求しています。</p>
+            </div>
+        </div>
+        <div class="container2">
+            <h2 class="section-title">会社沿革</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2018年</div>
+                    <div class="timeline-content">
+                        <p>リン酸鉄リチウムバッテリー事業を開始。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2019年</div>
+                    <div class="timeline-content">
+                        <p>FFヒーター事業に参入。製品開発を強化。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020年</div>
+                    <div class="timeline-content">
+                        <p>海外市場への展開を開始。グローバル販売網を構築。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021年</div>
+                    <div class="timeline-content">
+                        <p>IoT-ESSソリューションの開発を開始。スマート管理システムを導入。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022年</div>
+                    <div class="timeline-content">
+                        <p>累計出荷数20,000台を達成。市場シェアを拡大。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023年</div>
+                    <div class="timeline-content">
+                        <p>Q.LINKシステムをリリース。新たなサービスを開始。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+     <!-- Company History Section -->
+    <section id="battery-section2">
+        <div class="container">
+            
+            
+            <div class="battery-details">
+               <div class="detail-card">
+                    <h3>ABOUT US</h3>
+                    <p data-lang-key="Textaboutus1">当社は2017年の設立以来、リン酸鉄リチウムバッテリーおよびFFヒーターの製造、ならびにIoT-ESSソリューションの開発に注力してまいりました。</p>
+                    <br>
+                    <p data-lang-key="Textaboutus2">今後は日本市場をはじめ、グローバルな事業展開を進めるとともに、お客様からいただく貴重なご意見を製品づくりに活かし、さらなる品質向上と技術革新に取り組んでまいります。</p>
+                    <p style="padding-top: 30px;"><img src="img/logo_company.png" style="max-width: 100%; height: auto;"></p>
+                    
+                </div>
+                <div class="detail-card">
+                    <h3 data-lang-key="Titlecom">会社沿革</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year"data-lang-key="Year1">2017年</div>
+                                <div class="timeline-content">
+                                <p data-lang-key="Comtext1">会社設立</p>
+                                <p data-lang-key="Comtext2">mdhongブランドのFFヒーター製品を発売</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year" data-lang-key="Year2">2018年</div>
+                                <div class="timeline-content">
+                                 <p data-lang-key="Comtext3">キャンピング用品の輸入販売事業を開始</p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year" data-lang-key="Year3">2019年</div>
+                                <div class="timeline-content">
+                                <p data-lang-key="Comtext4">リン酸鉄リチウム（LiFePO₄）バッテリー製品を発売</p>
+                                <p data-lang-key="Comtext5">走行充電器製品を発売</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year" data-lang-key="Year4">2020年</div>
+                                <div class="timeline-content">
+                                 <p data-lang-key="Comtext6">IoTシステムの自社開発を開始</p>
+                                 <p data-lang-key="Comtext7">製品デザイン、PCB設計、プログラム開発を推進</p>
+                                 <p data-lang-key="Comtext8">車載用エアコン製品を発売</p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year" data-lang-key="Year5">2023年</div>
+                                <div class="timeline-content">
+                                <p data-lang-key="Comtext9">無動力ファン製品を発売</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year" data-lang-key="Year6">2024年</div>
+                                <div class="timeline-content">
+                                 <p data-lang-key="Comtext10">BMS（バッテリーマネジメントシステム）製品を発売</p>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year" data-lang-key="Year7">2025年</div>
+                                <div class="timeline-content">
+                                <p data-lang-key="Comtext11">IoT-ESSソリューションを正式リリース</p>
+                                <p data-lang-key="Comtext12">IoTアプリ「QLink」をリリース</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- Dealer & IoT Section -->
+    <section id="dealer-iot-section">
+        <div class="container">
+            <div class="dealer-iot-grid">
+                <div class="dealer-column">
+                    <h2 data-lang-key="Textdaili1">代理店募集</h2>
+                    <p data-lang-key="Textdaili2">当社はパートナー企業様の成功を最優先に考え、充実したサポート体制でビジネスの拡大を全面的にバックアップいたします。</p>
+                    <p data-lang-key="Textdaili3">当社製品はOEM供給にも対応しており、高品質な製品を貴社ブランドで展開いただけます。</p>
+                </div>
+                <div class="iot-column">
+                    <h2 data-lang-key="Textiot1">IoT-ESS ソリューション</h2>
+                    <p data-lang-key="Textiot2">キャンピングカーメーカー様向けに、最先端のオフグリッド電源システムとスマートコントロール技術を組み合わせた直感的で使いやすい統合ソリューション をご提案しています。</p>
+                    <p data-lang-key="Textiot3">お客様のモデルに、より高度で付加価値の高い電力システムを実装できるよう、ぜひ導入をご検討いただければ幸いです。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2 class="footer-title" data-lang-key="Titlecontact">お問い合わせ</h2>
+            <P style="text-align: center;margin-bottom: 20px;" data-lang-key="Textcontact">当社製品および各種ソリューションに関するお問い合わせは、下記よりお気軽にご連絡ください。</P>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div >
+                        <img src="img/logo_bottom.png" alt="logo_footer" >
+                    </div>
+                    <div >
+                          <strong>YILU HK LIMITED</strong>
+                    </div>    
+                </div>
+                <div class="footer-info">
+                    <p class="contact-item">
+                        <strong data-lang-key="contactmail">連絡先:</strong> kazz.chi@yilu.hk
+                    </p>
+                    <p class="contact-item">
+                        <strong data-lang-key="contactaddress">住所:</strong> Room 1413, Building A, 514 Iljik-dong, Gwangmyeong-si, Gyeonggi-do, Republic of Korea 14353
+                    </p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>YILU HK LIMITED. © All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
