@@ -273,7 +273,7 @@ section {
 }
 
 .section-banner {
-    background-color: var(--);
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 8px 20px;
     display: inline-block;
@@ -509,17 +509,17 @@ section {
     font-weight: bold;
     color: #000;
 }
-.detail-cardtop img{
-    display: flex;
-      width: 100%;
-    height: auto;
+.detail-cardtop {
+    text-align: center;   /* 이미지 가운데 정렬 */
+}
 
-    margin-bottom: 20px;
-    margin-top: 0px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    }
+.detail-cardtop img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+}
+
 
 .detail-image {
     display: flex;
@@ -1012,83 +1012,6 @@ section {
     color: rgba(255,255,255,0.7);
 }
 
- /* 下拉语言切换器样式 */
-        .lang-dropdown {
-            display: flex;
-            margin-bottom: 10px;
-            position: absolute;
-            left: 27%;
-        }
-
-        /* 下拉触发按钮 */
-        .dropdown-btn {
-            padding: 4px 8px;
-            border: 1px solid #ccc;
-            border-radius: 30px;
-            background: #fff;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            min-width: 80px;
-            justify-content: space-between;
-        }
-
-        .dropdown-btn:hover {
-            background: #f0f0f0;
-        }
-
-        .dropdown-btn.active {
-            background: #ffffff;
-            color: rgb(0, 0, 0);
-            border-color: #bababa;
-        }
-
-        /* 下拉选项列表 */
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            min-width: 100px;
-            margin-top: 4px;
-            padding: 0;
-            list-style: none;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            display: none;
-            z-index: 100;
-        }
-
-        /* 下拉选项样式 */
-        .dropdown-content li {
-            padding: 8px 16px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .dropdown-content li:hover {
-            background: #f8f9fa;
-        }
-
-        .dropdown-content li.active {
-            background: #5a6bc4;
-            color: white;
-        }
-
-        /* 显示下拉列表 */
-        .lang-dropdown.open .dropdown-content {
-            display: block;
-        }
-
-        /* 内容区域样式 */
-        .content {
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-        }
 
 /* Animations */
 @keyframes fadeInUp {
@@ -1226,12 +1149,6 @@ section {
     width: 200px;
     height: auto;
 }
-    .lang-dropdown {
-            display: flex;
-            margin-bottom: 10px;
-            position: absolute;
-            left: 230px;
-        }
 }
 
 @media (max-width: 480px) {
@@ -1256,32 +1173,6 @@ section {
 }
 
 /* Mobile navigation and overlay styles moved from dynamic JS injection */
-@media (max-width: 768px) {
-    .nav {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: auto;
-        background: white;
-        flex-direction: column;
-        padding-left: 20px;
-        
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        margin-right: 10px;
-        
-    }
-    
-    .nav.mobile-open {
-        max-height: 300px;
-        width: 30%;
-    }
-    
-    .nav-link {
-        padding: 10px 0;
-        border-bottom: 1px solid #eee;
-    }
 
     .section-header {
         transform: scale(0.85);
@@ -1304,18 +1195,27 @@ section {
     display: flex;
       width: 100%;
     height: auto;
-
     margin-bottom: 10px;
     margin-top: 0px;
     text-align: center;
     align-items: center;
     justify-content: center;
     }
-}/* Mobile menu toggle button */
+/* Mobile menu toggle button */
+/* ===== MOBILE MENU BUTTON ===== */
 .mobile-menu-toggle {
-    display: block;
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
@@ -1329,11 +1229,6 @@ section {
     }
 }
 
-@media (min-width: 769px) {
-    .mobile-menu-toggle {
-        display: none !important;
-    }
-}
 
 /* Mobile menu overlay */
 .mobile-menu-overlay {
@@ -1352,4 +1247,147 @@ section {
 .nav-link.active::after {
     width: 100%;
 }
+/* ===== HEADER RIGHT AREA (LANG + MOBILE) ===== */
 
+.header-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 오른쪽 영역 정렬 */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 언어 드롭다운 */
+.lang-dropdown {
+    position: relative;
+}
+
+/* 드롭다운 버튼 */
+.dropdown-btn {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown-content {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    list-style: none;
+    padding: 8px 0;
+    display: none;
+    min-width: 110px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dropdown-content li {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.dropdown-content li:hover {
+    background: #f5f5f5;
+}
+
+.lang-dropdown.open .dropdown-content {
+    display: block;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        width: 200px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav.mobile-open {
+        max-height: 300px;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .dropdown-btn {
+        font-size: 13px;
+        padding: 4px 10px;
+    }
+}
+
+
+
+/* 위 줄 */
+.header-top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 아래 줄 */
+.header-bottom {
+    display: flex;
+    align-items: center;
+}
+
+/* 메뉴를 오른쪽으로 밀기 */
+.nav {
+    display: flex;
+    gap: 40px;
+    margin-left: auto;
+}
+.lang-dropdown { position: relative; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 120px;
+  z-index: 9999;
+}
+
+.lang-dropdown.active .dropdown-content {
+  display: block;
+}
+/* ===== HEADER CORE FIX ===== */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .header-right {
+        display: flex;
+        flex-direction: column;   /* 위 → 아래 */
+        align-items: flex-end;    /* 오른쪽 정렬 */
+        gap: 6px;
+    }
+}

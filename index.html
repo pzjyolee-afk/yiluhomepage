@@ -9,37 +9,51 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="#home" ><img src="img/logo_top.png" alt="logo_top" ></a>
-                    
-                </div>
-                 <!-- 下拉式语言切换器 -->
-                <div class="lang-dropdown" id="langDropdown">
-                    <!-- 下拉触发按钮 -->
-                    <button class="dropdown-btn active" id="dropdownTrigger">
-                        <span id="currentLangText">日本語</span>
-                        <span>▼</span>
-                    </button>
-                    <!-- 下拉选项列表 -->
-                    <ul class="dropdown-content" id="langOptions">
-                        <li data-lang="ko-KR" >한국어</li>
-                        <li data-lang="en-US">English</li>
-                        <li data-lang="ja-JP" class="active">日本語</li>
-                    </ul>
-                </div>
+<header class="header">
+  <div class="container">
 
-                <nav class="nav">
-                    <a href="#home" class="nav-link" data-lang-key="btn_home">ソリューション</a>
-                    <a href="#battery-section" class="nav-link" data-lang-key="btn_product">製品情報</a>
-                    <a href="#battery-section2" class="nav-link" data-lang-key="btn_company">会社概要</a>
-                    <a href="#dealer-iot-section" class="nav-link" data-lang-key="btn_contact">お問い合わせ</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <!-- 1️⃣ 위 줄: 언어 선택 -->
+ <div class="header-top">
+  <div class="header-right">
+
+    <!-- ☰ 모바일 메뉴 버튼 -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      ☰
+    </button>
+
+    <!-- 언어 선택 -->
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="dropdown-btn" id="dropdownTrigger">
+        <span id="currentLangText">한국어</span>
+        <span class="arrow">▼</span>
+      </button>
+
+      <ul class="dropdown-content" id="langOptions">
+        <li data-lang="ko">한국어</li>
+        <li data-lang="jp">日本語</li>
+        <li data-lang="en">English</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    <!-- 2️⃣ 아래 줄: 로고 + 메뉴 -->
+    <div class="header-bottom">
+      <div class="logo">
+        <img src="img/logo_top.png">
+      </div>
+
+      <nav class="nav">
+        <a>ソリューション</a>
+        <a>製品情報</a>
+        <a>会社概要</a>
+        <a class="contact-btn">お問い合わせ</a>
+      </nav>
+    </div>
+
+  </div>
+</header>
 
     <!-- Q.LINK Hero Section -->
     <!-- <section id="home" class="battery-sectio3">
