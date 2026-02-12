@@ -273,7 +273,7 @@ section {
 }
 
 .section-banner {
-    background-color: var(--primary-color);
+    background-color: #f7f7f7;
     color: var(--white);
     padding: 8px 20px;
     display: inline-block;
@@ -300,7 +300,7 @@ section {
 }
 
 .total-shipments .number {
-    display: block;
+    display: inline-block;
     font-size: 32px;
     font-weight: bold;
     color: var(--primary-color);
@@ -1024,10 +1024,18 @@ section {
         transform: translateY(0);
     }
 }
-
 .fade-in {
-    animation: fadeInUp 0.6s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -1353,6 +1361,11 @@ section {
     display: flex;
     align-items: center;
 }
+@media (max-width: 768px) {
+    .header-bottom {
+        justify-content: space-between;
+    }
+}
 
 /* 메뉴를 오른쪽으로 밀기 */
 .nav {
@@ -1386,8 +1399,18 @@ section {
 @media (max-width: 768px) {
     .header-right {
         display: flex;
-        flex-direction: column;   /* 위 → 아래 */
         align-items: flex-end;    /* 오른쪽 정렬 */
-        gap: 6px;
+        gap: 10px;
     }
+}
+
+/* 🔥 强制显示动画 - 临时解决方案 */
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.fade-in.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }

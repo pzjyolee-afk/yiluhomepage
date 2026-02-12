@@ -16,10 +16,7 @@
  <div class="header-top">
   <div class="header-right">
 
-    <!-- ☰ 모바일 메뉴 버튼 -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-      ☰
-    </button>
+   
 
     <!-- 언어 선택 -->
     <div class="lang-dropdown" id="langDropdown">
@@ -43,23 +40,26 @@
       <div class="logo">
         <img src="img/logo_top.png">
       </div>
-
-      <nav class="nav">
-        <a>ソリューション</a>
-        <a>製品情報</a>
-        <a>会社概要</a>
-        <a class="contact-btn">お問い合わせ</a>
-      </nav>
+     <!-- ☰ 모바일 메뉴 버튼 -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      ☰
+    </button>
+        <nav class="nav">
+       <a href="#home" class="nav-link" data-lang-key="btn_home"></a>
+        <a href="#product" class="nav-link" data-lang-key="btn_product"></a>
+        <a href="#company" class="nav-link" data-lang-key="btn_company"></a>
+        <a href="#contact" class="nav-link contact-btn" data-lang-key="btn_contact"></a>
+        </nav>
     </div>
 
   </div>
 </header>
 
     <!-- Q.LINK Hero Section -->
-    <!-- <section id="home" class="battery-sectio3">
+    <!-- <section id="home class="battery-sectio3">
         <div class="container">
             <div class="battery-detailstop">
-              <div class="detail-cardtop" >
+              <div class="detail-cardtop fade-in">
                     <div style="max-width: 590px;margin: 0 auto; text-align: left; padding: 20px;">
                         <img src="img/qlink.png" alt="qlink" style=" display: flex; width: 183px; height: 62px; border-radius: 8px;margin-bottom: 20px;margin-top: 50px;text-align: center;align-items: center;justify-content: center;" >
                         <h1 style="font-size: 2.5em;font-weight: bold;color: #788ce3;margin: 0px 0;letter-spacing: 1px;">スマート管理</h1>
@@ -85,7 +85,7 @@
     <section id="home">
         <div class="container">
             <div class="battery-details">
-                <div class="detail-cardtop" >
+                <div class="detail-cardtop fade-in">
                     <div style="max-width: 590px;margin: 0 auto; text-align: left; padding: 20px;">
                         <img src="img/qlink.png" alt="qlink" style=" display: flex; width: 183px; height: 62px; border-radius: 8px;margin-bottom: 20px;margin-top: 50px;text-align: center;align-items: center;justify-content: center;" >
                         <h1 style="color: #788ce3;" data-lang-key="title">スマート管理</h1>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="detail-cardtop">
-                    <div ><img src="img/top-visual.png" data-lang-img-key="bannerImg" style="max-width: 100%; height: auto;"></div>
+                    <div><img src="img/top-visual.png" data-lang-img-key="bannerImg" data-src-lang="top-visual.png" style="max-width: 100%; height: auto;"></div>
                 </div>
             </div>
                 
@@ -112,7 +112,7 @@
     </section>
 
     <!-- ESS Solution Section -->
-    <section id="products" class="ess-solution-section">
+    <section id="product" class="ess-solution-section">
         <div class="container">
             <div class="section-header">
                 <div style="max-width: 590px;margin: 0 auto;padding: 20px;">
@@ -127,29 +127,29 @@
                 </div>
             </div>
             <div class="ess-cards">
-                <div class="ess-card">
+                <div class="ess-card fade-in">
                     <div class="ess-card-image battery-balance">
-                        <img src="img/battery.png" alt="Battery Balance" >
+                       <img src="img/battery.png" data-src-lang="battery.png" alt="Battery Balance">
                     </div>
                     <h3 data-lang-key="batteryh1">バッテリーバランス</h3>
                     <h4 data-lang-key="batteryh2">自動調整機能搭載</h4>
                     <p data-lang-key="batteryh3">セルバランスが崩れると充電を開始し、整うと停止します。</p>
                 </div>
-                <div class="ess-card">
-                    <div class="ess-card-image rv-camping"><img src="img/car.png" alt="rv-camping" ></div>
+                <div class="ess-card fade-in">
+                    <div class="ess-card-image rv-camping"><img src="img/car.png" data-src-lang="car.png" alt="rv-camping"></div>
                     <h4 data-lang-key="carh1">真冬でも安心！</h4>
                     <h3 data-lang-key="carh2">厳寒期の安全装置搭載</h3>
                     <p data-lang-key="carh3">厳しい寒さの中でも充電量と放電量を自動で調整し、マイナス10度でも無理なく、安心してお使いいただけます！</p>
                 </div>
-                <div class="ess-card">
-                    <div class="ess-card-image ess-container"><img src="img/house.png" alt="v" ></div>
+                <div class="ess-card fade-in">
+                    <div class="ess-card-image ess-container"><img src="img/house.png" data-src-lang="house.png" alt="v"></div>
                     <h3>ESS</h3>
                     <h4>[Energy Storage System]</h4>
                     <h3 data-lang-key="essh1">ESS安全認証取得済</h3>
                     <h4 data-lang-key="essh2">信頼できるバッテリーシステム</h4>
                 </div>
-                <div class="ess-card">
-                    <div class="ess-card-image bms-board"><img src="img/board.png" alt="bms-board" ></div>
+                <div class="ess-card fade-in">
+                    <div class="ess-card-image bms-board"><img src="img/board.png" data-src-lang="board.png" alt="bms-board"></div>
                     <h4 data-lang-key="boardh1">安心・安全のための</h4>
                     <h3>BMS</h3>
                     <h4 data-lang-key="boardh2">BMSからソフトウェアまで自社開発</h4>
@@ -180,17 +180,18 @@
                          <span style="background-color: #e63946;color: white;padding: 5px 15px;border-radius: 5px;font-size: 0.9em;font-weight: bold;"data-lang-key="Textoem">OEM生産のご依頼も承っております。</span>
                         <div style="font-size: 1.8em;font-weight: normal;color: #333;margin: 0px 0;text-transform: uppercase;letter-spacing: 2px;margin-top: 20px;">
                             <div class="total-shipments">
-                                <span class="label" data-lang-key="textchukou">出荷台数実績（韓国）</span>
-                                <span class="number">20,000+</span>
-                            </div>
+                            <span class="label" data-lang-key="textchukou">出荷台数実績（韓国）</span>
+                            <span class="number" data-target="20000">0+</span>
+                        </div>
+
                         </div>
                     </div>
                 </div>
                 
             </div>
             <div class="battery-products">
-                <div class="battery-card">
-                    <div class="battery-image portable-grey"><img src="img/battery_1.png"></div>
+                <div class="battery-card fade-in">
+                    <div class="battery-image portable-grey"> <img src="img/battery_1.png" data-src-lang="battery_1.png"></div>
                     <h3 data-lang-key="Powertext1">ポータブル電源</h3>
                     <ul>
                         <li >22.4V</li>
@@ -199,8 +200,8 @@
                         <li>250 x 350 x 300 mm</li>
                     </ul>
                 </div>
-                <div class="battery-card">
-                    <div class="battery-image portable-black"><img src="img/battery_2.png"></div>
+                <div class="battery-card fade-in">
+                    <div class="battery-image portable-black"><img src="img/battery_2.png" data-src-lang="battery_2.png"></div>
                     <h3 data-lang-key="Powertext1">ポータブル電源</h3>
                     <ul>
                         <li>12V</li>
@@ -209,8 +210,8 @@
                         <li>130 x 420 x 330 mm</li>
                     </ul>
                 </div>
-                <div class="battery-card">
-                    <div class="battery-image battery-pack"><img src="img/battery_3.png"></div>
+                <div class="battery-card fade-in">
+                    <div class="battery-image battery-pack"><img src="img/battery_3.png" data-src-lang="battery_3.png"></div>
                     <h3 data-lang-key="Power2text1">バッテリーパック</h3>
                     <ul>
                         <li>12V</li>
@@ -219,8 +220,8 @@
                         <li>443 x 156 x 250 mm</li>
                     </ul>
                 </div>
-                <div class="battery-card">
-                    <div class="battery-image battery-large-1"><img src="img/battery_4.png"></div>
+                <div class="battery-card fade-in">
+                    <div class="battery-image battery-large-1"><img src="img/battery_4.png" data-src-lang="battery_4.png"></div>
                     <h3 data-lang-key="Power3text1">大型バッテリー</h3>
                     <ul>
                         <li>12V/24V</li>
@@ -229,8 +230,8 @@
                         <li>365 x 670 x 250 mm</li>
                     </ul>
                 </div>
-                <div class="battery-card">
-                    <div class="battery-image battery-large-2"><img src="img/battery_5.png"></div>
+                <div class="battery-card fade-in">
+                    <div class="battery-image battery-large-2"><img src="img/battery_5.png" data-src-lang="battery_5.png"></div>
                     <h3 data-lang-key="Power3text1">大型バッテリー</h3>
                     <ul>
                         <li>12V/24V</li>
@@ -239,8 +240,8 @@
                         <li>360 x 360 x 250 mm</li>
                     </ul>
                 </div>
-                <div class="battery-card">
-                    <div class="battery-image charger"><img src="img/battery_6.png"></div>
+                <div class="battery-card fade-in">
+                    <div class="battery-image charger"><img src="img/battery_6.png" data-src-lang="battery_6.png"></div>
                     <h3 data-lang-key="Power4text1">充電器</h3>
                     <ul>
                         <li>12V</li>
@@ -255,12 +256,12 @@
             </div>
             <div class="battery-details">
                <div class="detail-card">
-                    <div class="detail-image cylindrical-cell"><img src="img/eve.jpg" style="max-width: 100%; height: auto;"></div>
+                    <div class="detail-image cylindrical-cell"><img src="img/eve.jpg" data-src-lang="eve.jpg" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Powertitle1">EVE社製 C33円筒形セル</h3>
                     <p data-lang-key="Powershuoming1">C33円筒形セルの最大放電率は「3C」すなわちバッテリー容量の3倍！</p>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-image cylindrical-cell"><img src="img/charge.jpg" style="max-width: 100%; height: auto;"></div>
+                    <div class="detail-image cylindrical-cell"><img src="img/charge.jpg" data-src-lang="charge.jpg" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Powertitle2">超高速充電対応セル構造</h3>
                     <p data-lang-key="Powershuoming2">C33円筒形セルは最大1Cの連続充電に対応。 40A急速充電器を使用すれば、わずか3時間でフル充電を実現。</p>
                 </div>
@@ -278,27 +279,27 @@
             </div>
             <div class="application-cards">
                 <div class="app-card">
-                    <div class="app-image camping"><img src="img/camping.jpg" style="max-width: 100%; height: auto;"></div>
+                    <div class="app-image camping"><img src="img/camping.jpg" data-src-lang="camping.jpg" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Changjing1">車中泊</h3>
                 </div>
                 <div class="app-card">
-                    <div class="app-image drone"><img src="img/drone.jpg" style="max-width: 100%; height: auto;"></div>
+                    <div class="app-image drone"><img src="img/drone.jpg" data-src-lang="drone.jpg" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Changjing2">ドローン</h3>
                 </div>
                 <div class="app-card">
-                    <div class="app-image fishing"><img src="img/fishing.jpg" style="max-width: 100%; height: auto;"></div>
+                    <div class="app-image fishing"><img src="img/fishing.jpg" data-src-lang="fishing.jpg" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Changjing3">釣り</h3>
                 </div>
                 <div class="app-card">
-                    <div class="app-image home"><img src="img/familyled.jpg" style="max-width: 100%; height: auto;"></div>
+                    <div class="app-image home">img src="img/familyled.jpg" data-src-lang="familyled.jpg" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Changjing4">非常用電力</h3>
                 </div>
                 <div class="app-card">
-                    <div class="app-image music"><img src="img/music.jpg" style="max-width: 100%; height: auto;"></div>
+                    <div class="app-image music"><img src="img/music.jpg" data-src-lang="music.jpg" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Changjing5">バスキング</h3>
                 </div>
                 <div class="app-card">
-                    <div class="app-image photography"><img src="img/photo.jpg" style="max-width: 100%; height: auto;"></div>
+                    <div class="app-image photography"><img src="img/photo.jpg" data-src-lang="photo.jpg" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Changjing6">野外撮影</h3>
                 </div>
             </div>
@@ -320,7 +321,8 @@
                         <div style="font-size: 1.8em;font-weight: normal;color: #333;margin: 0px 0; margin-top: 20px; text-transform: uppercase;letter-spacing: 2px;">
                             <div class="total-shipments">
                                 <span class="label" data-lang-key="textchukou">出荷台数実績（韓国）</span>
-                                <span class="number">100,000+</span>
+                               <span class="number" data-target="100000">0+</span>
+
                             </div>
                         </div>
                     </div></div>
@@ -328,7 +330,7 @@
             <div class="heater-content">
                 <div class="heater-products">
                     <div class="heater-card">
-                        <div class="heater-image heater-black-2kw"><img src="img/one2k.png" style="max-width: 100%; height: auto;"></div>
+                        <div class="heater-image heater-black-2kw"><img src="img/one2k.png" data-src-lang="one2k.png" style="max-width: 100%; height: auto;"></div>
                         <h3 data-lang-key="Heatertext1">一体型FFヒーター　2KW</h3>
                         <ul>
                             <li>12V</li>
@@ -338,7 +340,7 @@
                         </ul>
                     </div>
                     <div class="heater-card">
-                        <div class="heater-image heater-black-5kw"><img src="img/one5k.png" style="max-width: 100%; height: auto;"></div>
+                        <div class="heater-image heater-black-5kw"><img src="img/one5k.png" data-src-lang="one5k.png" style="max-width: 100%; height: auto;"></div>
                         <h3 data-lang-key="Heater2text1">一体型FFヒーター　5KW</h3>
                         <ul>
                             <li>12V</li>
@@ -348,7 +350,7 @@
                         </ul>
                     </div>
                     <div class="heater-card">
-                        <div class="heater-image heater-white-2kw"><img src="img/car2k.png" style="max-width: 100%; height: auto;"></div>
+                        <div class="heater-image heater-white-2kw"><img src="img/car2k.png" data-src-lang="car2k.png" style="max-width: 100%; height: auto;"></div>
                         <h3 data-lang-key="Heater3text1">車載用FFヒーター　2KW</h3>
                         <ul>
                             <li>12V</li>
@@ -358,7 +360,7 @@
                         </ul>
                     </div>
                     <div class="heater-card">
-                        <div class="heater-image heater-white-5kw"><img src="img/car5k.png" style="max-width: 100%; height: auto;"></div>
+                        <div class="heater-image heater-white-5kw"><img src="img/car5k.png" data-src-lang="car5k.png" style="max-width: 100%; height: auto;"></div>
                         <h3 data-lang-key="Heater4text1">車載用FFヒーター　5KW</h3>
                         <ul>
                             <li>12V</li>
@@ -385,19 +387,19 @@
                 <p  data-lang-key="Pointtext1">長年にわたって築き上げたサプライヤーネットワークを基盤に、常に最適な高品質パーツを厳選し、製品の品質向上と優れたコストパフォーマンスを実現しています。</p>
             </div>
             <div class="component-cards">
-                <div class="component-card"> <img src="img/fire.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
-                <div class="component-card"> <img src="img/fire2.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
-                <div class="component-card"> <img src="img/bldc.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
-                <div class="component-card"> <img src="img/pcb.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>    
+                <div class="component-card"> <img src="img/fire.jpg" data-src-lang="fire.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/fire2.jpg" data-src-lang="fire2.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/bldc.jpg" data-src-lang="bldc.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/pcb.jpg" data-src-lang="pcb.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>    
             </div>
             <div class="components-description">
                 <p data-lang-key="Pointtext2">自社が独自に設計・開発したパーツを搭載することで、耐久性や信頼性など、製品品質の大幅な強化を実現しております。</p>
             </div>
              <div class="component-cards">
-                <div class="component-card"> <img src="img/control.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
-                <div class="component-card"> <img src="img/0sound.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
-                <div class="component-card"> <img src="img/heater.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
-                <div class="component-card"> <img src="img/burn.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/control.jpg" data-src-lang="control.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"> <img src="img/0sound.jpg" data-src-lang="0sound.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"><img src="img/heater.jpg" data-src-lang="heater.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
+                <div class="component-card"><img src="img/burn.jpg" data-src-lang="burn.jpg" style="max-width: 100%; height: auto;border-radius: 15px;"></div>
             </div>
             
         </div>
@@ -419,7 +421,7 @@
             </div>
             <div class="other-products-grid">
                 <div class="other-product-card">
-                    <div class="other-product-image power-supply"><img src="img/zouxing.png" style="max-width: 100%; height: auto;"></div>
+                    <div class="other-product-image power-supply"><img src="img/zouxing.png" data-src-lang="zouxing.png" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Othertext1">走行充電器</h3>
                     <ul>
                         <li data-lang-key="Othertext2">最大電流　50A</li>
@@ -428,7 +430,7 @@
                     </ul>
                 </div>
                 <div class="other-product-card">
-                    <div class="other-product-image inverter"><img src="img/zouxing2.png" style="max-width: 100%; height: auto;"></div>
+                    <div class="other-product-image inverter"><img src="img/aircon.png" data-src-lang="aircon.png" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Other2text1">インバーター</h3>
                     <ul>
                         <li>12V/24V</li>
@@ -437,7 +439,7 @@
                     </ul>
                 </div>
                 <div class="other-product-card">
-                    <div class="other-product-image air-conditioner"><img src="img/aircon.png" style="max-width: 100%; height: auto;"></div>
+                    <div class="other-product-image air-conditioner"><img src="img/fan.png" data-src-lang="fan.png" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Other3text1">車載エアコン</h3>
                     <ul>
                         <li>DC 12V/24V</li>
@@ -455,7 +457,7 @@
                     </ul>
                 </div>
                 <div class="other-product-card">
-                    <div class="other-product-image radar"><img src="img/zouxing3.png" style="max-width: 100%; height: auto;"></div>
+                    <div class="other-product-image radar"><img src="img/zouxing3.png" data-src-lang="zouxing3.png" style="max-width: 100%; height: auto;"></div>
                     <h3 data-lang-key="Other5text1">ソーラーパネル</h3>
                     <ul>
                         <li>200W</li>
@@ -533,7 +535,7 @@
     </section>-->
 
      <!-- Company History Section -->
-    <section id="battery-section2">
+    <section id="company">
         <div class="container">
             
             
@@ -659,6 +661,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+   <script src="script.js" defer></script>
+
 </body>
 </html>

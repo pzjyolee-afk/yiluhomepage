@@ -1,298 +1,355 @@
-// 平滑滚动
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
 
-// 滚动时显示动画
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+console.log("ANIMATE VERSION 2 - FINAL FIX");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// 观察所有卡片和部分
-document.addEventListener('DOMContentLoaded', () => {
-    const elementsToAnimate = document.querySelectorAll(
-        '.ess-card, .battery-card, .app-card, .heater-card, .component-card, .other-product-card, .detail-card, .timeline-item'
-    );
+// ============================================
+// 1. 所有初始化统一在一个DOMContentLoaded里
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 DOM加载完成，初始化所有功能');
     
-    elementsToAnimate.forEach(el => {
-        observer.observe(el);
-    });
-});
-
-// Header滚动效果
-let lastScroll = 0;
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+    // 初始化所有功能
+    initSmoothScroll();
+    initScrollAnimations();
+    initHeaderScroll();
+    initDeviceIcons();
+    initCardHover();
+    initCarouselArrow();
+    initProductCards();
+    initNavActiveState();
+    initHeroDevices();
+    initLoadAnimation();
+    initContactForm();
+    initLazyLoading();
+    initMobileMenu();
+    initLanguageSwitcher();  // 语言切换也放这里
     
-    // 阴影效果已取消
-    header.style.boxShadow = 'none';
+    // 数字计数动画 - 使用修复版
+    initNumberCounters();
+});
+
+// ============================================
+// 2. 数字计数动画（完全修复版！）
+// ============================================
+function initNumberCounters() {
+    console.log('🔢 初始化数字计数动画 - 修复版');
     
-    lastScroll = currentScroll;
-});
-
-// 设备图标动画
-const deviceIcons = document.querySelectorAll('.device-icon');
-deviceIcons.forEach((icon, index) => {
-    icon.style.animationDelay = `${index * 0.1}s`;
-    icon.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.1) rotate(5deg)';
-    });
-    icon.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1) rotate(0deg)';
-    });
-});
-
-// 卡片悬停效果增强
-const cards = document.querySelectorAll('.ess-card, .battery-card, .app-card, .heater-card, .component-card, .other-product-card');
-cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s ease';
-    });
-});
-
-// 数字计数动画
-function animateCounter(element, target, duration = 2000) {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target.toLocaleString() + '+';
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current).toLocaleString() + '+';
-        }
-    }, 16);
-}
-
-// 观察数字元素
-const numberObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const numberElement = entry.target;
-            const targetText = numberElement.textContent;
-            const targetNumber = parseInt(targetText.replace(/[^0-9]/g, ''));
-            
-            if (targetNumber && !numberElement.classList.contains('animated')) {
-                numberElement.classList.add('animated');
-                animateCounter(numberElement, targetNumber);
+    // 数字动画函数 - 修复变量错误！
+    function animateCounter(el, target) {
+        let current = 0;  // 只用一个变量
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        
+        function update() {
+            current += increment;
+            if (current < target) {
+                el.textContent = Math.floor(current).toLocaleString() + "+";
+                requestAnimationFrame(update);
+            } else {
+                el.textContent = target.toLocaleString() + "+";
+                console.log(`✅ 数字完成: ${target.toLocaleString()}+`);
             }
         }
-    });
-}, { threshold: 0.5 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const numberElements = document.querySelectorAll('.total-shipments .number');
-    numberElements.forEach(el => {
-        numberObserver.observe(el);
-    });
-});
-
-// 轮播箭头点击效果
-const carouselArrow = document.querySelector('.carousel-arrow');
-if (carouselArrow) {
-    carouselArrow.addEventListener('click', function() {
-        this.style.transform = 'translateY(-50%) scale(0.9)';
-        setTimeout(() => {
-            this.style.transform = 'translateY(-50%) scale(1)';
-        }, 200);
         
-        // 这里可以添加实际的轮播功能
-        console.log('Carousel arrow clicked');
-    });
-}
-
-// 产品卡片点击效果
-const productCards = document.querySelectorAll('.battery-card, .heater-card, .other-product-card');
-productCards.forEach(card => {
-    card.addEventListener('click', function() {
-        this.style.transform = 'scale(0.98)';
-        setTimeout(() => {
-            this.style.transform = '';
-        }, 150);
-    });
-});
-
-// 视差滚动效果（轻微）
-// 已移除 hero 区域的视差与上滑虚化效果，保留此前实现记录以便需要时恢复。
-
-// 导航链接激活状态
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// 导航链接的活动样式已移入 `styles.css`
-
-// 鼠标跟随效果（可选，用于特殊元素）
-const heroDevices = document.querySelector('.hero-devices');
-if (heroDevices) {
-    heroDevices.addEventListener('mousemove', (e) => {
-        const rect = heroDevices.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const moveX = (x - centerX) / 20;
-        const moveY = (y - centerY) / 20;
-        
-        const devices = heroDevices.querySelectorAll('.device-icon');
-        devices.forEach((device, index) => {
-            const delay = index * 0.1;
-            device.style.transform = `translate(${moveX * (index + 1) * 0.1}px, ${moveY * (index + 1) * 0.1}px)`;
-        });
-    });
-    
-    heroDevices.addEventListener('mouseleave', () => {
-        const devices = heroDevices.querySelectorAll('.device-icon');
-        devices.forEach(device => {
-            device.style.transform = '';
-        });
-    });
-}
-
-// 加载动画
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-// 响应式菜单（移动端）
-const createMobileMenu = () => {
-    if (window.innerWidth <= 768) {
-        const nav = document.querySelector('.nav');
-        if (!document.querySelector('.mobile-menu-toggle')) {
-            const toggle = document.createElement('button');
-            toggle.className = 'mobile-menu-toggle';
-            toggle.innerHTML = '☰';
-            toggle.style.cssText = `
-                display: none;
-                background: none;
-                border: none;
-                font-size: 24px;
-                cursor: pointer;
-                color: var(--text-dark);
-            `;
-            
-            if (window.innerWidth <= 768) {
-                toggle.style.display = 'block';
-            }
-            
-            const headerContent = document.querySelector('.header-content');
-            headerContent.insertBefore(toggle, nav);
-
-            // 创建或获取遮罩层（用于在移动端打开菜单时禁用背景交互）
-            let overlay = document.querySelector('.mobile-menu-overlay');
-            if (!overlay) {
-                overlay = document.createElement('div');
-                overlay.className = 'mobile-menu-overlay';
-                overlay.style.display = 'none';
-                document.body.appendChild(overlay);
-            }
-            
-            // 切换菜单并同步图标状态
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.setAttribute('aria-label', 'Toggle navigation');
-            toggle.addEventListener('click', () => {
-                const isOpen = nav.classList.toggle('mobile-open');
-                toggle.innerHTML = isOpen ? '✕' : '☰';
-                toggle.setAttribute('aria-expanded', String(isOpen));
-            });
-
-            // 点击遮罩关闭菜单
-            overlay.addEventListener('click', () => {
-                nav.classList.remove('mobile-open');
-                toggle.innerHTML = '☰';
-                toggle.setAttribute('aria-expanded', 'false');
-                overlay.style.display = 'none';
-            });
-        }
+        // 开始动画
+        el.textContent = "0+";
+        requestAnimationFrame(update);
     }
-};
 
-// 初始化移动菜单
-createMobileMenu();
-window.addEventListener('resize', createMobileMenu);
+    // 获取所有数字元素
+    const numbers = document.querySelectorAll(".total-shipments .number");
+    console.log('找到数字元素数量:', numbers.length);
+    
+    if (numbers.length === 0) {
+        console.warn('⚠️ 未找到数字元素');
+        
+        // 重试机制
+        setTimeout(() => {
+            const retryNumbers = document.querySelectorAll(".total-shipments .number");
+            console.log('重试找到数字元素:', retryNumbers.length);
+            if (retryNumbers.length > 0) {
+                startAnimation(retryNumbers);
+            }
+        }, 500);
+        return;
+    }
+    
+    startAnimation(numbers);
+    
+    function startAnimation(numberElements) {
+        const numberObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                
+                const el = entry.target;
+                if (el.classList.contains("animated")) return;
+                
+                el.classList.add("animated");
+                const target = parseInt(el.getAttribute("data-target"));
+                
+                if (!isNaN(target)) {
+                    console.log(`🎯 触发数字动画: ${target}`);
+                    animateCounter(el, target);
+                }
+                
+                observer.unobserve(el);
+            });
+        }, {
+            threshold: 0.2
+        });
 
-// 移动端相关样式（菜单与遮罩）已迁移到 `styles.css`，不再由 JS 动态注入。
-
-// 表单验证（如果有联系表单）
-const contactForm = document.querySelector('form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // 表单提交逻辑
-    });
+        numberElements.forEach(el => {
+            el.classList.remove("animated");
+            el.textContent = "0+";
+            numberObserver.observe(el);
+            console.log('👀 观察数字元素:', el);
+        });
+        
+        // 立即显示可见的数字
+        setTimeout(() => {
+            numberElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add("animated");
+                    const target = parseInt(el.getAttribute("data-target"));
+                    if (!isNaN(target)) {
+                        animateCounter(el, target);
+                    }
+                }
+            });
+        }, 200);
+    }
 }
 
-// 图片懒加载（如果使用真实图片）
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+// ============================================
+// 3. 滚动动画（修复首页选择器）
+// ============================================
+function initScrollAnimations() {
+    console.log('🎬 初始化滚动动画');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    imageObserver.unobserve(img);
-                }
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
             }
         });
-    });
+    }, observerOptions);
+
+    // ✅ 正确的选择器
+    const selectors = [
+        '.ess-card', '.battery-card', '.app-card', 
+        '.heater-card', '.component-card', 
+        '.detail-cardtop',  // 首页卡片
+        '.other-product-card', 
+        '.detail-card', 
+        '.timeline-item', 
+        '.section-banner'
+    ].join(',');
     
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
+    const elementsToAnimate = document.querySelectorAll(selectors);
+    console.log(`🎯 找到动画元素: ${elementsToAnimate.length} 个`);
+    
+    elementsToAnimate.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
     });
 }
 
-console.log('YILU HK LTD Website - Interactive features loaded');
+// ============================================
+// 4. Header滚动效果（修复缺失的函数）
+// ============================================
+function initHeaderScroll() {
+    const header = document.querySelector('.header');
+    if (!header) return;
+    
+    window.addEventListener('scroll', () => {
+        header.style.boxShadow = 'none';
+    });
+}
 
- // 1. 定义多语言数据（可扩展更多语言/文本）
+// ============================================
+// 5. 其他函数（保持不变，但确保都存在）
+// ============================================
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+function initDeviceIcons() {
+    const deviceIcons = document.querySelectorAll('.device-icon');
+    deviceIcons.forEach((icon, index) => {
+        icon.style.animationDelay = `${index * 0.1}s`;
+        icon.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1) rotate(5deg)';
+        });
+        icon.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+    });
+}
+
+function initCardHover() {
+    const cards = document.querySelectorAll('.ess-card, .battery-card, .app-card, .heater-card, .component-card, .other-product-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s ease';
+        });
+    });
+}
+
+function initCarouselArrow() {
+    const carouselArrow = document.querySelector('.carousel-arrow');
+    if (carouselArrow) {
+        carouselArrow.addEventListener('click', function() {
+            this.style.transform = 'translateY(-50%) scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-50%) scale(1)';
+            }, 200);
+        });
+    }
+}
+
+function initProductCards() {
+    const productCards = document.querySelectorAll('.battery-card, .heater-card, .other-product-card');
+    productCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+}
+
+function initNavActiveState() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    if (sections.length === 0 || navLinks.length === 0) return;
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
+function initHeroDevices() {
+    const heroDevices = document.querySelector('.hero-devices');
+    if (heroDevices) {
+        heroDevices.addEventListener('mousemove', (e) => {
+            const rect = heroDevices.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const moveX = (x - centerX) / 20;
+            const moveY = (y - centerY) / 20;
+            
+            const devices = heroDevices.querySelectorAll('.device-icon');
+            devices.forEach((device, index) => {
+                device.style.transform = `translate(${moveX * (index + 1) * 0.1}px, ${moveY * (index + 1) * 0.1}px)`;
+            });
+        });
+        
+        heroDevices.addEventListener('mouseleave', () => {
+            const devices = heroDevices.querySelectorAll('.device-icon');
+            devices.forEach(device => {
+                device.style.transform = '';
+            });
+        });
+    }
+}
+
+function initLoadAnimation() {
+    window.addEventListener('load', () => {
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            document.body.style.transition = 'opacity 0.5s ease';
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+}
+
+function initContactForm() {
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+    }
+}
+
+function initLazyLoading() {
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+}
+
+function initMobileMenu() {
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    const nav = document.querySelector('.nav');
+    
+    if (mobileToggle && nav) {
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('mobile-open');
+        });
+        
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('mobile-open');
+            });
+        });
+    }
+}
+
+// ============================================
+// 6. 多语言功能
+// ============================================
         const languageData = {
   'ko': {
             btn_home: '솔루션',
@@ -572,7 +629,7 @@ langText: 'English'
                 Bannerpoint2: 'カスタマイズ開発も承っております。',
                 textchukou: '出荷台数実績（韓国）',
                 Powertext1: 'ポータブル電源',
-                Powertext2: 'KC62619安全認証',
+                Powertext2: 'KC62619安全認証',
                 Power2text1: 'バッテリーパック',
                 Power3text1: '大型バッテリー',
                 Power4text1: '充電器',
@@ -645,76 +702,81 @@ langText: 'English'
             }
         };
 
-        // 2. 获取页面元素
-        const langDropdown = document.getElementById('langDropdown');
-        const dropdownTrigger = document.getElementById('dropdownTrigger');
-        const currentLangText = document.getElementById('currentLangText');
-        const langOptions = document.querySelectorAll('#langOptions li');
-        const langElements = document.querySelectorAll('[data-lang-key]');
-        const langImgElements = document.querySelectorAll('[data-lang-img-key]');
+function initLanguageSwitcher() {
+    console.log('🌐 初始化语言切换');
+    
+    const langDropdown = document.getElementById('langDropdown');
+    const dropdownTrigger = document.getElementById('dropdownTrigger');
+    const currentLangText = document.getElementById('currentLangText');
+    const langOptions = document.querySelectorAll('#langOptions li');
+    const langElements = document.querySelectorAll('[data-lang-key]');
+    
+    if (!langDropdown || !dropdownTrigger) return;
+
+    // ========== 在这里添加图片切换函数 ==========
+    function switchImages(lang) {
+        console.log(`🖼️ 切换图片到: ${lang}`);
         
-
-        // 3. 核心切换函数
-        function switchLanguage(lang) {
-            // 验证语言是否存在
-            if (!languageData[lang]) {
-                console.warn(`语言 ${lang} 未配置`);
-                return;
-            }
-
-            // 更新页面所有带data-lang-key的元素文本
-            langElements.forEach(element => {
-                const key = element.getAttribute('data-lang-key');
-                if (languageData[lang][key]) {
-                    element.textContent = languageData[lang][key];
-                }
-            });
-
-            // 更新下拉选项的激活状态
-            langOptions.forEach(option => {
-                option.classList.toggle('active', option.getAttribute('data-lang') === lang);
-            });
-
-            // 更新下拉按钮显示的语言名称
-            currentLangText.textContent = languageData[lang].langText;
-
-            // 更新html标签的lang属性（符合SEO规范）
-            document.documentElement.lang = lang;
-
-            // 保存到本地存储，页面刷新后保留选择
-            localStorage.setItem('selectedLanguage', lang);
-
-            // 收起下拉菜单
-            langDropdown.classList.remove('open');
+        // 处理所有带 data-src-lang 的图片
+        document.querySelectorAll('img[data-src-lang]').forEach(img => {
+            const baseImageName = img.dataset.srcLang;
+            img.src = `img/${lang}/${baseImageName}`;
+        });
+        
+        // 处理 banner 图片
+        const bannerImg = document.querySelector('img[data-lang-img-key="bannerImg"]');
+        if (bannerImg) {
+            bannerImg.src = `img/${lang}/top-visual.png`;
         }
+    }
+    // ==========================================
 
-        // 4. 下拉菜单展开/收起逻辑
-        dropdownTrigger.addEventListener('click', (e) => {
-            e.stopPropagation(); // 防止事件冒泡到document
-            langDropdown.classList.toggle('open');
+    function switchLanguage(lang) {
+        if (!languageData[lang]) return;
+        
+        // 1. 切换文本内容
+        langElements.forEach(element => {
+            const key = element.getAttribute('data-lang-key');
+            if (languageData[lang][key]) {
+                element.textContent = languageData[lang][key];
+            }
         });
-
-        // 点击页面其他区域收起下拉菜单
-        document.addEventListener('click', () => {
-            langDropdown.classList.remove('open');
-        });
-
-        // 阻止点击下拉选项时收起菜单（先执行切换逻辑）
-        document.getElementById('langOptions').addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-
-        // 5. 绑定下拉选项点击事件
+        
+        // ========== 在这里添加图片切换调用 ==========
+        // 2. 切换图片
+        switchImages(lang);
+        // ==========================================
+        
+        // 3. 更新UI状态
         langOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const selectedLang = option.getAttribute('data-lang');
-                switchLanguage(selectedLang);
-            });
+            option.classList.toggle('active', option.getAttribute('data-lang') === lang);
         });
+        
+        if (currentLangText) {
+            currentLangText.textContent = languageData[lang].langText || lang.toUpperCase();
+        }
+        
+        localStorage.setItem('selectedLanguage', lang);
+        langDropdown.classList.remove('active');
+    }
 
-        // 6. 页面加载时，优先使用本地存储的语言，无则使用默认语言
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('selectedLanguage') || 'ko-KR';
-            switchLanguage(savedLang);
+    dropdownTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+        langDropdown.classList.remove('active');
+    });
+
+    langOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedLang = option.getAttribute('data-lang');
+            switchLanguage(selectedLang);
         });
+    });
 
+    const savedLang = localStorage.getItem('selectedLanguage') || 'ko';
+    switchLanguage(savedLang);
+}
+console.log('✅ YILU HK LTD Website - 所有功能加载完成');
